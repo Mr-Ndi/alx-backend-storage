@@ -1,5 +1,6 @@
--- Rank the country origins of bands by the number of non-unique fans
-SELECT origin, SUM(nb_fans) AS nb_fans
-FROM metal_bands
-GROUP BY origin
-ORDER BY nb_fans DESC;
+-- rabking the countries based on the number of fans
+-- we need to use sum 
+
+SELECT origin, SUM(fans) as fans_number FROM metal_bands GROUP BY origin
+HAVING fans_number != 1
+ORDER BY fans_number DESC;
